@@ -36,10 +36,10 @@
                 src="./img/heart.ico"></h1>
     </header>
 
-    <form class="ctn-pass">
+    <form class="ctn-pass" onsubmit="return false">
         <h2>Introduzca el código</h2>
         <input type="text" class="password" placeholder="Supersecreto">
-        <input type="button" value="Confirmar" class="confirmar">
+        <input type="submit" value="Confirmar" class="confirmar">
     </form>
 
     <div class="ctn-main">
@@ -62,7 +62,7 @@
             <h3>15/02/23</h3>
             <p>Ay, se me había olvidado darte para que pusieras en agua la flor jsjsjs, no vaya a ser que se te muera, mira.</p>
             <img class="pot" src="https://cdn-icons-png.flaticon.com/512/3812/3812794.png" style="width: 100px; display: block;"/>
-            <p class="edtxt"></p>
+            <h3 class="edtxt" style="display: none;"> > Uuuu, tu rosa se transformó en Entropia virtual tamagochi :o</h3>
             <script>
                 $(".pot").droppable({
                     drop(){
@@ -70,10 +70,11 @@
                         $(".pot").attr("src", "https://cdn-icons-png.flaticon.com/512/3006/3006825.png").css("cursor","pointer").draggable().droppable({
                             drop(){
                                 $(".pot").attr("src", "https://pa1.narvii.com/7624/0eb2fc1ac904498c74a183f0e4bccaa546d946fdr1-288-452_hq.gif")
-                                $(".edtxt").text("Uy mano, todoroki tiktoker, plot twist.")
+                                $(".watercan").fadeOut()
+                                $(".edtxt").text("> Uy mano, todoroki tiktoker, plot twist.")
                             }
                         })
-                        $(".edtxt").text("Se transformó en Entropia virtual tamagochi :o")
+                        $(".edtxt").fadeIn()
                         $(".watercan").fadeIn()
 
                 }});

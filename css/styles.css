@@ -137,6 +137,7 @@ input[type="button"]{
     display: none;
 }
 .mn-title img{
+margin: 10px;
 width: 30px;
 animation: latir 2s infinite;
 }
