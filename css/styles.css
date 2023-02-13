@@ -1,0 +1,142 @@
+/*
+font-family: 'Poppins', sans-serif;
+font-family: 'Sofia', cursive;
+*/
+@keyframes latir {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes temblar{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(30deg);
+    }
+    50%{
+        transform: rotateZ(0deg);
+    }
+    75%{
+        transform: rotateZ(-30deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes emocion {
+    0%{
+        transform: translateX(0px);
+    }
+    25%{
+        
+        transform: translateX(20px) ;
+    }
+    50%{
+        transform: translateX(0px) ;
+    }
+    75%{
+        transform: translateX(-20px);
+    }
+    100%{
+        transform: translateX(0px) ;
+    }
+
+}
+body{
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: #9C89FF;
+}
+h1, h2, h3{
+    font-family: 'Sofia', cursive;
+}
+.ctn-header{
+    padding: 10px;
+    text-align: center;
+    height: 90px;
+    background-color: #541675;
+    width: 100%;
+    box-shadow: 2px 0px 15px #333;
+}
+
+.ctn-pass{
+    margin: 30px auto;
+    background-color: #541675;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px #333;
+}
+input[type="button"]{
+    background-color: #9C89FF;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.ctn-tarros{
+    display: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px #333;
+    padding: 20px;
+    background-color: #541675;
+    width: 75%;
+    margin: 30px auto;
+}
+.ctn-msg{
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px #333;
+    padding: 20px;
+    background-color: #541675;
+    width: 75%;
+    margin: 30px auto;
+    display: none;
+}
+.ctn-tarros > * {
+    text-align: center;
+    flex-grow: 1;
+}
+.tarrito,.cartica{
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    transform: rotateZ(0deg);
+}
+.tarrito:hover{
+    cursor: pointer;
+    animation: temblar 1s infinite;
+}
+.cartica:hover{
+    cursor: pointer;
+    animation: emocion 1s infinite;
+}
+.papelito{
+    background-color: #9C89FF;
+    display: flex;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px
+}
+.papericon{
+    width: 40px;
+}
+.papertext{
+    flex-grow: 1;
+}
+.tipo-papelitos{
+    margin: 10px auto;
+}
+.mn-title{
+    display: none;
+}
+.mn-title img{
+width: 30px;
+animation: latir 2s infinite;
+}
