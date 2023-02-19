@@ -22,7 +22,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sofia&display=swap" rel="stylesheet">
     <!---->
+    <script src="./js/server.js" defer></script>
     <script src="./js/index.js" defer></script>
+
 
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./img/heartwarning.ico">
@@ -38,10 +40,11 @@
 
     <form class="ctn-pass" onsubmit="return false">
         <h2>Introduzca el código</h2>
+        <p class="cargando">Cargando conexión con el servidor. Espere un momento...</p>
         <p class="aviso-pc">Debes ingresar desde un computador para acceder a los códigos.</p>
         <br class="aviso-pc">
-        <input type="text" class="password" placeholder="Supersecreto">
-        <input type="submit" value="Confirmar" class="confirmar">
+        <input type="text" style="display: none;" class="password" placeholder="Supersecreto">
+        <input type="submit" style="display: none;" value="Confirmar" class="confirmar">
     </form>
 
     <div class="ctn-main">
@@ -139,52 +142,72 @@
                 <div class="acert-1"style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
                     <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-1" src="https://cdn-icons-png.flaticon.com/512/3352/3352287.png" >
                     <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/3074/3074318.png" >
-                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1" src="https://cdn-icons-png.flaticon.com/512/1864/1864640.png" >
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-3" src="https://cdn-icons-png.flaticon.com/512/1864/1864640.png" >
                     <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/677/677684.png" >
                 </div>
                 <div class="acert-1" style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
-                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1"src="https://cdn-icons-png.flaticon.com/512/1424/1424071.png">
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-4"src="https://cdn-icons-png.flaticon.com/512/1424/1424071.png">
                     <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/9586/9586751.png" >
                     <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-2" src="https://cdn-icons-png.flaticon.com/512/9689/9689779.png">
                 </div>
                 <hr>
                 <div class="anss-1" style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
-                    <img class="ans-1-1" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
-                    <img class="ans-1-2" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
-                    <img class="ans-1-3" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
-                    <img class="ans-1-4" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-1" style="width: 100px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-2" style="width: 100px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-3" style="width: 100px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-4" style="width: 100px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
                 </div>
-                <h2 style="text-align: center;">satsugem</h2>
-                <p></p>
+                <p class="instrucciones1" style="text-align: center; display: none;">Instrucciones: Entregale a Juanes tu novio un papel con el siguiente mensaje:</p>
+                <h2 class="instrucciones1" style="text-align: center; display: none; margin-top: -20px">satsugem</h2>
+                <p class="instrucciones1" style="text-align: center; display: none;">Espera instrucciones</p>
                 <script>
                     let values = [false, false, false, false]
                     let evalvaluesans1 = function(){
                         if(!values.includes(false)){
-                            $()
+                            console.log("Holaaa")
+                            $(".instrucciones1").fadeIn()
+                        }else{
+                            $(".instrucciones1").fadeOut()
                         }
                     }
                     $(".acert-1 > img").draggable({
                         containment: '.ctn-msg-show-4'
                         })
                     $(".anss-1 > img").droppable();
-¿
+
                     $(".ans-1-1").on("drop",function(event, ui){
-                        ui.draggable.hasClass("correct-ans-1-")
+                        values[0] = ui.draggable.hasClass("correct-ans-1-1")
+                        evalvaluesans1()
                     });
                     $(".ans-1-2").on("drop",function(event, ui){
-                        ui.draggable.hasClass("correct-ans-1-")
+                        values[1] =ui.draggable.hasClass("correct-ans-1-2")
+                        evalvaluesans1()
                     });
                     $(".ans-1-3").on("drop",function(event, ui){
-                        ui.draggable.hasClass("correct-ans-1-")
+                        values[2] =ui.draggable.hasClass("correct-ans-1-3")
+                        evalvaluesans1()
                     });
                     $(".ans-1-4").on("drop",function(event, ui){
-                        ui.draggable.hasClass("correct-ans-1-")
+                        values[3] =ui.draggable.hasClass("correct-ans-1-4")
+                        evalvaluesans1()
                     });
 
-                    $(".ans-1-1").on("dropout",function(event, ui){});
-                    $(".ans-1-2").on("dropout",function(event, ui){});
-                    $(".ans-1-3").on("dropout",function(event, ui){});
-                    $(".ans-1-4").on("dropout",function(event, ui){});
+                    $(".ans-1-1").on("dropout",function(event, ui){
+                        values[0] = false;
+                        evalvaluesans1()
+                    });
+                    $(".ans-1-2").on("dropout",function(event, ui){
+                        values[1] = false;
+                        evalvaluesans1()
+                    });
+                    $(".ans-1-3").on("dropout",function(event, ui){
+                        values[2] = false;
+                        evalvaluesans1()
+                    });
+                    $(".ans-1-4").on("dropout",function(event, ui){
+                        values[3] = false;
+                        evalvaluesans1()
+                    });
 
 
                 </script>
@@ -203,36 +226,106 @@
 
 
         <div class="ctn-tarros">
-            <div class="ctn-sacar">
+
+            <div class="ctn-sacar"> 
                 <h2>Sacar del Tarrito</h2>
                 <img class="tarrito" src="./img/tarrito.png">
-                <select class="tipo-papelitos">
-                    <option value="planes">Planes</option>
-                    <option value="series">Series</option>
-                    <option value="recetas">Recetas</option>
-                    <option value="libros">Libros</option>
+                <select class="tipo-papelitos-sacar">
+                    <option value="Planes">Planes</option>
+                    <option value="Series">Series</option>
+                    <option value="Película">Películas</option>
+                    <option value="Recetas">Recetas</option>
+                    <option value="Libros">Libros</option>
                 </select>
-                <div class="papelito"> <img src="./img/loveq.png" class="papericon">
+                <div class="papelito papelitosacado">
+                    <img src="./img/loveq.png" class="papericon">
                     <div class="papertext">aa</div>
                 </div>
             </div>
+
             <div>
                 <h2>Meter al tarrito</h2>
                 <form action="#">
-                    <input type="text" class="input-url" placeholder="Url de la Imagen">
+                    <input type="url" class="input-url" placeholder="Url de la Imagen">
                     <br>
                     <input type="text" class="input-papelito" placeholder="Papelito">
-                    <select class="tipo-papelitos">
-                        <option value="planes">Planes</option>
-                        <option value="series">Series</option>
-                        <option value="recetas">Recetas</option>
-                        <option value="libros">Libros</option>
+                    <select class="tipo-papelitos-meter">
+                        <option value="Planes">Planes</option>
+                        <option value="Series">Series</option>
+                        <option value="Película">Películas</option>
+                        <option value="Recetas">Recetas</option>
+                        <option value="Libros">Libros</option>
                     </select>
                     <br>
                 </form>
                 <img src="./img/heart-letter.png" class="cartica">
             </div>
+
         </div>
+
+
+
+        <div class="ctn-papelitos" style="display:none">
+            <div class="ctn-papelitos-header">
+                <h2>Biblioteca de Papelitos</h2> <img src="https://cdn-icons-png.flaticon.com/512/9427/9427548.png">
+            </div>
+            <img class="btn-mostrarpapel" src="https://cdn-icons-png.flaticon.com/512/5964/5964774.png">
+            <div class="ctn-bib-papelitos">
+                <div class="papeles-info"></div>
+
+            </div>
+            <script>
+                let mostrarPapelitos = $(".btn-mostrarpapel")
+                mostrarPapelitos.click(() => {
+                    let i = 0;
+                    while (i <= 5){
+                        if(!papelitosMostrar || papelitosMostrar.length == 0) break;
+
+                        let elemento = papelitosMostrar.pop()
+                        let {contenido, estado, tipo, link_icono, calificacion, id} = elemento;
+
+                        $(".papeles-info").append(
+                            `<div class="papelito papel-info info-pap" paperid="${id}">
+                                <img src="${link_icono}" class="papericon">
+                                <div class="papertext">
+                                    <h4>${contenido.substr(0, 34)}${(contenido.length > 35 ? "..." : "")}</h4>
+                                    <h5>${tipo}</h5>
+                                </div>
+
+                            <div class="fields-pap">
+                                <div class="selects-pap">
+                                    <select class="tipo-pap" paperid="${id}" style="height: 30px; align-items: center">
+                                        <option value="Planes">Planes</option>
+                                        <option value="Series">Series</option>
+                                        <option value="Película">Películas</option>
+                                        <option value="Recetas">Recetas</option>
+                                        <option value="Libros">Libros</option>
+                                    </select>
+                                    <select class="estado-pap" paperid="${id}" style="height: 30px; align-items: center">
+                                        <option value="Por Hacer">Por Hacer</option>
+                                        <option value="Hecho">Hecho</option>
+                                        <option value="Repetible">Repetíble</option>
+                                    </select>
+                                </div>
+                                <input value="Actualizar" type="button" class="update-pap" paperid="${id}">
+                            </div>
+
+
+                            <div class="calif-pap" paperid="${id}">
+                                <h2>${calificacion}<span style="font-size:15px">✨</span></h2>
+                                <input min="0" max="5" value="${calificacion}" type="range">
+                            </div>
+
+                            </div>
+                            `)
+
+                        i++;
+                    }
+                })
+
+            </script>
+        </div>
+
 
 
 

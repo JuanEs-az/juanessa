@@ -2,6 +2,68 @@
 font-family: 'Poppins', sans-serif;
 font-family: 'Sofia', cursive;
 */
+input[type='range']{
+-webkit-appearance: none;
+ background: transparent; /* quitamos estilos es moz y webkit lo ponemios transparente */
+ width: 100%; /* En firefox es requerido poner el ancho */
+}
+input[type='range']::-webkit-slider-runnable-track, 
+input[type='range']::-webkit-slider-thumb{
+         -webkit-appearance: none;
+}
+input[type=range]:focus {
+    outline: none; /*Elimina el borde azul. Se debería dar estilo de enfoque por razones de accesibilidad */
+  }
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Oculta el control deslizante para agregar estilos personalizados */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -14px; /* hay que darle valor negativo, solo a este navegador */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 25px;
+    width: 36px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 25px;
+    width: 36px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: orange;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: orange;
+  }  
 @keyframes latir {
     0%{
         transform: scale(1);
@@ -90,7 +152,7 @@ input[type="button"]{
     width: 75%;
     margin: 30px auto;
 }
-.ctn-msg{
+.ctn-msg, .ctn-papelitos{
     border-radius: 10px;
     box-shadow: 2px 2px 15px #333;
     padding: 20px;
@@ -117,17 +179,33 @@ input[type="button"]{
     animation: emocion 1s infinite;
 }
 .papelito{
-    background-color: #9C89FF;
+    background-color: #7E38B7;
     display: flex;
+    justify-content: space-between;
     border-radius: 10px;
     margin: 10px auto;
     padding: 10px
+
 }
 .papericon{
-    width: 40px;
+    width: 60px;
 }
-.papertext{
+.selects-pap{
+    display: flex;
+}
+.tipo-pap,.estado-pap,.calif-pap,.selects-pap{
     flex-grow: 1;
+}
+.update-pap{
+    display: block;
+    margin: 10px auto;
+}
+.papertext, .fields-pap{
+flex-grow: 2;
+
+}
+.papertext h4{
+    width: 300px
 }
 .tipo-papelitos{
     margin: 10px auto;
@@ -143,6 +221,41 @@ animation: latir 2s infinite;
 .aviso-pc{
     display: none;
 }
+.ctn-papelitos-header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.ctn-papelitos-header > img{
+    width: 55px;
+}
+
+.btn-mostrarpapel{
+    display:block; cursor: pointer;width: 100px;margin:0 auto;
+}
+.btn-mostrarpapel:hover{
+    animation: latir 2s infinite;
+}
+.ctn-bib-papelitos{
+}
+.papeles-info{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.calif-pap{
+    text-align: center;
+    color: orange;
+}
+.calif-pap input{
+    background: orange;
+    cursor: pointer;
+}
+.calif-pap h2{
+    font-family: 'Poppins', sans-serif;
+}
+
 @media (max-width: 1300px){
     .aviso-pc{
         display: inline;
