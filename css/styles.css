@@ -97,7 +97,6 @@ input[type="button"]{
     background-color: #541675;
     width: 75%;
     margin: 30px auto;
-    display: none;
 }
 .ctn-tarros > * {
     text-align: center;
@@ -140,4 +139,16 @@ input[type="button"]{
 margin: 10px;
 width: 30px;
 animation: latir 2s infinite;
+}
+.aviso-pc{
+    display: none;
+}
+@media (max-width: 1300px){
+    .aviso-pc{
+        display: inline;
+    }
+    .password{
+        display: none;
+    }
+
 }

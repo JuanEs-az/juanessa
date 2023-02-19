@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        
+
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -22,8 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sofia&display=swap" rel="stylesheet">
     <!---->
-    <script src="./js/helpers.js" defer></script>
     <script src="./js/index.js" defer></script>
+
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./img/heartwarning.ico">
     <title>‎</title>
@@ -32,12 +32,14 @@
 <body>
     <header class="ctn-header">
         <h1 class="fk-title">????</h1>
-        <h1 class="mn-title"><img src="./img/heart.ico"><span class="mn-title-ctn"></span><img
-                src="./img/heart.ico"></h1>
+        <h1 class="mn-title"><img src="./img/heart.ico"><span class="mn-title-ctn"></span><img src="./img/heart.ico">
+        </h1>
     </header>
 
     <form class="ctn-pass" onsubmit="return false">
         <h2>Introduzca el código</h2>
+        <p class="aviso-pc">Debes ingresar desde un computador para acceder a los códigos.</p>
+        <br class="aviso-pc">
         <input type="text" class="password" placeholder="Supersecreto">
         <input type="submit" value="Confirmar" class="confirmar">
     </form>
@@ -45,50 +47,160 @@
     <div class="ctn-main">
 
 
-        <div class="ctn-msg">
-            <h3>12/02/23</h3>
-            <p> Hola Dulzura, Feliz año!!! :), la verdad es que me gusta mucho hacerte detallitos y tratar de embellecer cada día más
-                nuestra relación, así como detalle de aniversario decidí, además del regalo que tenía planeado,
-                hacerte esto. Que básicamente es otro medio dónde puedo hacerte y mandarte cositas a través de los códigos que pongas.</p>
-            <p>Depronto no le sé mucho a las manualidades pero sí le sé a esto , no muchas mujeres pueden decir que el novio les hizo una página jsjsjsjsj :p.</p>
-            <p>Igual mira, como soy extremadamente romántico te regalo una floresita.</p>
-            <img class="rose" src="img/rose.png" style="width: 100px; display: block; cursor: pointer;margin: 0 auto;"/>
-            <script>
-                $(".rose").draggable();
-            </script>
-        </div>
 
-        <div class="ctn-msg">
-            <h3>15/02/23</h3>
-            <p>Ay, se me había olvidado darte para que pusieras en agua la flor jsjsjs, no vaya a ser que se te muera, mira.</p>
-            <img class="pot" src="https://cdn-icons-png.flaticon.com/512/3812/3812794.png" style="width: 100px; display: block;"/>
-            <h3 class="edtxt" style="display: none;"> > Uuuu, tu rosa se transformó en Entropia virtual tamagochi :o</h3>
-            <script>
-                $(".pot").droppable({
-                    drop(){
-                        $(".rose").fadeOut()
-                        $(".pot").attr("src", "https://cdn-icons-png.flaticon.com/512/3006/3006825.png").css("cursor","pointer").draggable().droppable({
-                            drop(){
-                                $(".pot").attr("src", "https://pa1.narvii.com/7624/0eb2fc1ac904498c74a183f0e4bccaa546d946fdr1-288-452_hq.gif")
-                                $(".watercan").fadeOut()
-                                $(".edtxt").text("> Uy mano, todoroki tiktoker, plot twist.")
-                            }
+
+
+
+
+        <div class="ctn-msgs" style="display: none;">
+            <div class="ctn-msg ctn-msg-show-1">
+                <h3>Nota del 12/02/23</h3>
+                <p> Hola Dulzura, Feliz año!!! :), la verdad es que me gusta mucho hacerte detallitos y tratar de
+                    embellecer cada día más
+                    nuestra relación, así como detalle de aniversario decidí, además del regalo que tenía planeado,
+                    hacerte esto. Que básicamente es otro medio dónde puedo hacerte y mandarte cositas a través de los
+                    códigos que pongas.</p>
+                <p>Depronto no le sé mucho a las manualidades pero sí le sé a esto , no muchas mujeres pueden decir que
+                    el novio les hizo una página jsjsjsjsj :p.</p>
+                <p>Igual mira, como soy extremadamente romántico te regalo una floresita.</p>
+                <img class="rose" src="img/rose.png"
+                    style="width: 100px; display: block; cursor: pointer;margin: 0 auto;" />
+                <p>psst... Arrastra la floresita con el mouse. :p</p>
+                <script>
+                    $(".rose").draggable({
+                        drag() {
+                            $(".ctn-msg-show-2").fadeIn();
+                            window.scroll({
+                                top: 1000,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                </script>
+            </div>
+            <div class="ctn-msg ctn-msg-show-2" style="display: none;">
+                <h3>Nota del 15/02/23</h3>
+                <p>Buenos días mi vida, te quiero muchísimooooo, ojalá te haya gustado mi regalito, sabes que todo esto
+                    es con muchísimo amor :3.</p>
+                <p>Btw, se me había olvidado darte para que plantaras la flor , no vaya a ser que se te muera, mira.
+                    jsjsjs</p>
+                <img class="pot" src="https://cdn-icons-png.flaticon.com/512/3812/3812794.png"
+                    style="width: 100px; display: block;" />
+                <h3 class="edtxt1" style="display: none;"> > Uuuu, tu rosa se transformó en Entropia virtual tamagochi
+                    :o</h3>
+                <h3 class="edtxt2" style="display: none;"> > > Uy mano, todoroki tiktoker, plot twist. </h3>
+                <h5 class="edtxt2" style="display: none;"> > > > Psst, dale click a tu todoroki tiktoker tamagochi pou
+                    >.< </h5>
+                        <script>
+                            $(".pot").droppable({
+                                drop() {
+                                    $(".rose").fadeOut()
+                                    $(".pot").attr("src", "https://cdn-icons-png.flaticon.com/512/3006/3006825.png").css("cursor", "pointer").droppable({
+                                        drop() {
+                                            $(".pot").attr("src", "https://pa1.narvii.com/7624/0eb2fc1ac904498c74a183f0e4bccaa546d946fdr1-288-452_hq.gif").click(() => {
+
+                                                setTimeout(() => $(".ctn-msg-show-3").fadeOut(), 500)
+                                                setTimeout(() => $(".ctn-msg-show-2").fadeOut(), 1000)
+                                                setTimeout(() => $(".ctn-msg-show-1").fadeOut(), 1500)
+                                                setTimeout(() => $(".ctn-msg-show-4").fadeIn(), 2000)
+
+                                            })
+                                            $(".watercan").fadeOut()
+                                            $(".edtxt2").fadeIn()
+                                        }
+                                    })
+                                    $(".edtxt1").fadeIn()
+                                    $(".ctn-msg-show-3").fadeIn()
+                                    window.scroll({
+                                        top: 1000,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            });
+                        </script>
+            </div>
+            <div class="ctn-msg ctn-msg-show-3" style="display: none;">
+                <h3>Nota del 19/02/23</h3>
+                <p>Holaaaa, hace un año, mientras veíamos hora de aventura unos segundos antes de que me propusieras
+                    matrimonio, te dije que lo más importante no es crear cosas lindas como nuestra relación, sino
+                    también cuidar y proteger de todo lo que creemos juntos, Es por eso que te dejo este mensajito por
+                    aquí para que <em>no se te olvide regar a tu Entropia virtual tamagochi</em>, y para que nunca nunca dejemos
+                    de cuidar este lindo vínculo que tenemos.</p>
+                <img class="watercan" src="https://cdn-icons-png.flaticon.com/512/1174/1174635.png"
+                    style="width: 100px; display: block;cursor: pointer" />
+                <script>
+                    $(".watercan").draggable();
+                </script>
+            </div>
+            <div class="ctn-msg ctn-msg-show-4" style="display: none;">
+                <h3>20/02/23</h3>
+                <p>Me hace muy feliz cumplir nuestro primer año juntos vida mía, eres un completo amor :3.</p>
+                <p>Cómo veo que te gustan mucho decifrar cosas aquí te dejo para que decifres jsjsj. </p>
+                <div class="acert-1"style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-1" src="https://cdn-icons-png.flaticon.com/512/3352/3352287.png" >
+                    <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/3074/3074318.png" >
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1" src="https://cdn-icons-png.flaticon.com/512/1864/1864640.png" >
+                    <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/677/677684.png" >
+                </div>
+                <div class="acert-1" style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1"src="https://cdn-icons-png.flaticon.com/512/1424/1424071.png">
+                    <img style="width: 70px; cursor: pointer;display: block;" src="https://cdn-icons-png.flaticon.com/512/9586/9586751.png" >
+                    <img style="width: 70px; cursor: pointer;display: block;" class="correct-ans-1-2" src="https://cdn-icons-png.flaticon.com/512/9689/9689779.png">
+                </div>
+                <hr>
+                <div class="anss-1" style="display: flex; justify-content: space-around; width: 75%; margin: 0 auto;">
+                    <img class="ans-1-1" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-2" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-3" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                    <img class="ans-1-4" style="width: 70px;display: block;" src="https://cdn-icons-png.flaticon.com/512/869/869078.png">
+                </div>
+                <h2 style="text-align: center;">satsugem</h2>
+                <p></p>
+                <script>
+                    let values = [false, false, false, false]
+                    let evalvaluesans1 = function(){
+                        if(!values.includes(false)){
+                            $()
+                        }
+                    }
+                    $(".acert-1 > img").draggable({
+                        containment: '.ctn-msg-show-4'
                         })
-                        $(".edtxt").fadeIn()
-                        $(".watercan").fadeIn()
+                    $(".anss-1 > img").droppable();
+¿
+                    $(".ans-1-1").on("drop",function(event, ui){
+                        ui.draggable.hasClass("correct-ans-1-")
+                    });
+                    $(".ans-1-2").on("drop",function(event, ui){
+                        ui.draggable.hasClass("correct-ans-1-")
+                    });
+                    $(".ans-1-3").on("drop",function(event, ui){
+                        ui.draggable.hasClass("correct-ans-1-")
+                    });
+                    $(".ans-1-4").on("drop",function(event, ui){
+                        ui.draggable.hasClass("correct-ans-1-")
+                    });
 
-                }});
-            </script>
+                    $(".ans-1-1").on("dropout",function(event, ui){});
+                    $(".ans-1-2").on("dropout",function(event, ui){});
+                    $(".ans-1-3").on("dropout",function(event, ui){});
+                    $(".ans-1-4").on("dropout",function(event, ui){});
+
+
+                </script>
+            </div>
         </div>
 
-        <div class="ctn-msg">
-            <h3>19/02/23</h3>
-            <p>Dejo este mensajito por aquí para que no se te olvide regar a Entropia virtual tamagochi.</p>
-            <img class="watercan" src="https://cdn-icons-png.flaticon.com/512/1174/1174635.png" style="width: 100px; display: block;cursor: pointer"/>
-            <script>
-                $(".watercan").draggable().hide();
-            </script>
-        </div>
+
+
+
+
+
+
+
+
+
+
 
         <div class="ctn-tarros">
             <div class="ctn-sacar">

@@ -4,7 +4,7 @@ let password = $(".password");
 let confirmar = $(".confirmar");
 //DOM
 let main = $(".ctn-main")
-let msg = $(".ctn-msg")
+let msg = $(".ctn-msgs")
 let tarros = $(".ctn-tarros")
 let ttl_txt =  $(".mn-title-ctn")
 //Funciones
